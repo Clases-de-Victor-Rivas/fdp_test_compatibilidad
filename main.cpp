@@ -13,11 +13,18 @@ int main() {
     int num1, num2;
 
     // Pido los datos de entrada
-    cout << "Jugador número 1, indique un número: ";
-    cin >> num1;
+    // Añado un filtro: los datos tienen que estar entre 1 y 50.
+    const int MIN=1;
+    const int MAX=50;
+    do {
+        cout << "Jugador número 1, indique un número entre " << MIN << " y " << MAX << ": ";
+        cin >> num1;
+    } while ( num1<MIN || num1>MAX );
 
-    cout << "Jugador número 2, indique un número: ";
-    cin >> num2;
+    do {
+        cout << "Jugador número 2, indique un número entre " << MIN << " y " << MAX << ": ";
+        cin >> num2;
+    } while ( num2<MIN || num2>MAX );
 
 
     // Compruebo si coinciden
