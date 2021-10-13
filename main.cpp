@@ -16,24 +16,30 @@ int main() {
     // Añado un filtro: los datos tienen que estar entre 1 y 50.
     const int MIN=1;
     const int MAX=50;
-    do {
-        cout << "Jugador número 1, indique un número entre " << MIN << " y " << MAX << ": ";
-        cin >> num1;
-    } while ( num1<MIN || num1>MAX );
 
-    do {
-        cout << "Jugador número 2, indique un número entre " << MIN << " y " << MAX << ": ";
-        cin >> num2;
-    } while ( num2<MIN || num2>MAX );
+    // Repetimos el mismo proceso durante 5 veces.
+    const int NUM_VECES = 5;
+    for( int i=0; i<NUM_VECES; ++i ) {
+        cout << "Comprobación " << (i+1) << " de " << NUM_VECES << endl << endl;
+        do {
+            cout << "Jugador número 1, indique un número entre " << MIN << " y " << MAX << ": ";
+            cin >> num1;
+        } while ( num1<MIN || num1>MAX );
+
+        do {
+            cout << "Jugador número 2, indique un número entre " << MIN << " y " << MAX << ": ";
+            cin >> num2;
+        } while ( num2<MIN || num2>MAX );
 
 
-    // Compruebo si coinciden
-    if( num1==num2 ) {
-        cout << "Habéis coincidido: sois compatibles"<<endl;
-    } else {
-        cout << "No habéis coincidido: sois incompatibles"<<endl;
+        // Compruebo si coinciden
+        if( num1==num2 ) {
+            cout << "Habéis coincidido: sois compatibles";
+        } else {
+            cout << "No habéis coincidido: sois incompatibles";
+        }
+        cout << endl << endl;
     }
-
     // Fin del programa.
     cout << "Fin del programa"<<endl;
     return 0;
