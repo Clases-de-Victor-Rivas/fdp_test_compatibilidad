@@ -19,6 +19,11 @@ int main() {
 
     // Repetimos el mismo proceso durante 5 veces.
     const int NUM_VECES = 5;
+
+    // Contamos las veces que coinciden
+    int num_coincidencias = 0;
+
+    // Iniciamos el proceso.
     for( int i=0; i<NUM_VECES; ++i ) {
         cout << "Comprobación " << (i+1) << " de " << NUM_VECES << endl << endl;
         do {
@@ -34,12 +39,18 @@ int main() {
 
         // Compruebo si coinciden
         if( num1==num2 ) {
-            cout << "Habéis coincidido: sois compatibles";
+            ++num_coincidencias;
+            cout << "Habéis coincidido.";
         } else {
-            cout << "No habéis coincidido: sois incompatibles";
+            cout << "No habéis coincidido.";
         }
         cout << endl << endl;
     }
+
+    // Imprimimos el porcentaje de compatibilidad.
+
+    cout << "Habéis coincidido " << num_coincidencias << " de " << NUM_VECES << " pruebas." << endl;
+    cout << "Eso da un porcentaje de compatibilidad del " << (double)num_coincidencias/NUM_VECES*100 << "%" << endl;
     // Fin del programa.
     cout << "Fin del programa"<<endl;
     return 0;
